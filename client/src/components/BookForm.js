@@ -12,18 +12,6 @@ const BookForm = ({
   setDescription,
   selectedBook,
 }) => {
-  const onTitleChange = (event) => {
-    setTitle(event.target.value);
-  };
-
-  const onAuthorChange = (event) => {
-    setAuthor(event.target.value);
-  };
-
-  const onDescriptionChange = (event) => {
-    setDescription(event.target.value);
-  };
-
   const clearForm = () => {
     setTitle('');
     setAuthor('');
@@ -91,7 +79,7 @@ const BookForm = ({
           className='input is-link'
           type='text'
           value={title}
-          onChange={(event) => onTitleChange(event)}
+          onChange={(event) => setTitle(event.target.value)}
           required
         />
       </div>
@@ -101,7 +89,7 @@ const BookForm = ({
           className='input is-link'
           type='text'
           value={author}
-          onChange={(event) => onAuthorChange(event)}
+          onChange={(event) => setAuthor(event.target.value)}
           required
         />
       </div>
@@ -112,7 +100,7 @@ const BookForm = ({
           type='textarea'
           rows='6'
           value={description}
-          onChange={(event) => onDescriptionChange(event)}
+          onChange={(event) => setDescription(event.target.value)}
           required
         />
       </div>
